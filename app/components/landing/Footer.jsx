@@ -32,10 +32,10 @@ const Footer = () => {
                                 <span className="sr-only">Facebook</span>
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href={SOCIAL_LINKS.linkedin} className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300">
+                            {/* <a href={SOCIAL_LINKS.linkedin} className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300">
                                 <span className="sr-only">LinkedIn</span>
                                 <Linkedin className="w-5 h-5" />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ const Footer = () => {
                     <p className="text-sm text-gray-400">© 2025 Fit Choice World Inc. All rights reserved.</p>
 
                     <div className="flex items-center gap-6">
-                        <span className="text-sm font-medium text-gray-400">Made with ❤️ for Fitness</span>
+                        {/* <span className="text-sm font-medium text-gray-400">Made with ❤️ for Fitness</span> */}
                         <div className="flex gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
                             <Instagram className="w-4 h-4" />
                             <Twitter className="w-4 h-4" />

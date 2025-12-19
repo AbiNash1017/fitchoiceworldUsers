@@ -83,19 +83,26 @@ const ContactPage = () => {
 
                             <div className="grid sm:grid-cols-2 gap-6">
                                 {[
-                                    { icon: <Mail className="w-5 h-5 text-black" />, label: "Email Us", value: CONTACT_INFO.email },
-                                    { icon: <Phone className="w-5 h-5 text-black" />, label: "Call Us", value: CONTACT_INFO.phone },
+                                    { icon: <Mail className="w-5 h-5 text-black" />, label: "Email Us", value: CONTACT_INFO.email, href: `mailto:${CONTACT_INFO.email}` },
+                                    { icon: <Phone className="w-5 h-5 text-black" />, label: "Call Us", value: CONTACT_INFO.phone, href: `tel:${CONTACT_INFO.phone}` },
                                     { icon: <Clock className="w-5 h-5 text-black" />, label: "Support Hours", value: "6 AM - 6 PM (Mon-Sat)" },
                                     { icon: <MessageSquare className="w-5 h-5 text-black" />, label: "Quick Response", value: "Within 24 hours" }
-                                ].map((item, idx) => (
-                                    <div key={idx} className="p-6 rounded-[2rem] bg-gray-50 border border-gray-100 hover:border-black/10 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group">
-                                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                                            {item.icon}
-                                        </div>
-                                        <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">{item.label}</p>
-                                        <p className="font-bold text-gray-900 leading-tight">{item.value}</p>
-                                    </div>
-                                ))}
+                                ].map((item, idx) => {
+                                    const Tag = item.href ? 'a' : 'div';
+                                    return (
+                                        <Tag
+                                            key={idx}
+                                            href={item.href}
+                                            className={`p-6 rounded-[2rem] bg-gray-50 border border-gray-100 hover:border-black/10 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group block ${item.href ? 'cursor-pointer' : ''}`}
+                                        >
+                                            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                                {item.icon}
+                                            </div>
+                                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">{item.label}</p>
+                                            <p className="font-bold text-gray-900 leading-tight">{item.value}</p>
+                                        </Tag>
+                                    );
+                                })}
                             </div>
                         </div>
 
