@@ -23,7 +23,7 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
                     <Link href="/#features" className="hover:text-black transition-colors">Features</Link>
-                    <Link href="/#reviews" className="hover:text-black transition-colors">Stories</Link>
+                    {/* <Link href="/#reviews" className="hover:text-black transition-colors">Stories</Link> */}
                     <Link href="/contact" className="hover:text-black transition-colors">Contact Us</Link>
                     <Link href="/#download-app" className="bg-black text-white px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         Get the App

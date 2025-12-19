@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
     Mail,
     MapPin,
@@ -50,23 +51,33 @@ const ContactPage = () => {
                             We're here to <span className="text-gray-400">help you.</span>
                         </h1>
                         <p className="text-xl text-gray-500 leading-relaxed">
-                            Have questions about the app? Need help with your account? Our team is available 24/7 to support your fitness journey.
+                            Have questions about the app? Need help with your account? Our team is available to support your fitness journey.
                         </p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-12 items-start">
                         {/* Contact Information */}
                         <div className="space-y-8">
-                            <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl group border border-gray-100">
+                            <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl group border border-gray-100 bg-gradient-to-br from-black via-gray-900 to-gray-800">
                                 <img
                                     src="/images/landing_hero.jpg"
-                                    alt="Support Team"
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                                    alt="Your Fitness Journey"
+                                    className="w-full h-full object-cover opacity-20 transform group-hover:scale-110 transition-transform duration-1000"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div className="absolute bottom-8 left-8">
-                                    <p className="text-white/80 text-sm font-medium uppercase tracking-widest mb-2">Our Office</p>
-                                    <h3 className="text-2xl font-bold text-white">Innovation Hub, Mysore</h3>
+                                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                                    <div className="max-w-md space-y-6">
+                                        <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+                                            Your <span className="italic bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">fitness journey</span> starts here.
+                                        </h3>
+                                        <p className="text-white/80 text-lg font-medium leading-relaxed">
+                                            Every champion was once a beginner. Take the first step today and transform your tomorrow.
+                                        </p>
+                                        <div className="pt-4">
+                                            <Link href="/" className="inline-block bg-white text-black px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/20">
+                                                Get Started Now
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -74,8 +85,8 @@ const ContactPage = () => {
                                 {[
                                     { icon: <Mail className="w-5 h-5 text-black" />, label: "Email Us", value: CONTACT_INFO.email },
                                     { icon: <Phone className="w-5 h-5 text-black" />, label: "Call Us", value: CONTACT_INFO.phone },
-                                    { icon: <MessageSquare className="w-5 h-5 text-black" />, label: "Live Chat", value: "Available 24/7" },
-                                    { icon: <MapPin className="w-5 h-5 text-black" />, label: "Location", value: "Mysore, India" }
+                                    { icon: <Clock className="w-5 h-5 text-black" />, label: "Support Hours", value: "6 AM - 6 PM (Mon-Sat)" },
+                                    { icon: <MessageSquare className="w-5 h-5 text-black" />, label: "Quick Response", value: "Within 24 hours" }
                                 ].map((item, idx) => (
                                     <div key={idx} className="p-6 rounded-[2rem] bg-gray-50 border border-gray-100 hover:border-black/10 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group">
                                         <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
@@ -140,8 +151,12 @@ const ContactPage = () => {
                                                 <select className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/5 transition-all outline-none appearance-none cursor-pointer font-medium">
                                                     <option>General Support</option>
                                                     <option>Vendor Partnerships</option>
+                                                    <option>Performance Bug</option>
+                                                    <option>Report a Bug</option>
+                                                    <option>UI/UX</option>
                                                     <option>Feedback & Suggestions</option>
                                                     <option>Account Issues</option>
+                                                    <option>Others</option>
                                                 </select>
                                                 <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-30">
                                                     <Clock className="w-4 h-4" />
