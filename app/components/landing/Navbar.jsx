@@ -40,7 +40,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <imgag
+                    <img
                         src={LOGO_URL}
                         alt="Fit Choice World Logo"
                         className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
