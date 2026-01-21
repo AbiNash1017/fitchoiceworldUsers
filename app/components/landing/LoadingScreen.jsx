@@ -60,21 +60,28 @@ const LoadingScreen = ({ onComplete }) => {
                 </div>
 
                 {/* Brand Text */}
-                <div className="text-center space-y-3">
+                <div className="text-center space-y-4 max-w-xs px-4">
                     <h1
-                        className={`text-xl font-bold tracking-tight text-black transition-all duration-1000 ease-out delay-200 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                        className={`text-2xl font-bold tracking-tight text-black transition-all duration-1000 ease-out delay-200 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                             }`}
                     >
-                        Fit Choice World
+                        FYKLI - Fit Choice World
                     </h1>
 
-                    {/* Subtext - Improved Contrast & Visibility */}
-                    <p
-                        className={`text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 transition-all duration-1000 ease-out delay-300 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                            }`}
-                    >
-                        Your Health Hub
-                    </p>
+                    <div className="space-y-2">
+                        <p
+                            className={`text-sm font-medium text-gray-800 transition-all duration-1000 ease-out delay-300 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                                }`}
+                        >
+                            Your Mood, Your Fitness, Your Choice
+                        </p>
+                        <p
+                            className={`text-xs font-bold uppercase tracking-[0.1em] text-orange-600 transition-all duration-1000 ease-out delay-500 transform ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                                }`}
+                        >
+                            One Coin - Endless Fitness
+                        </p>
+                    </div>
                 </div>
 
                 {/* Ultra-minimal Progress Bar */}

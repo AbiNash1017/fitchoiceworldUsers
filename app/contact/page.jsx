@@ -17,13 +17,38 @@ import { CONTACT_INFO } from '@/app/constants';
 const ContactPage = () => {
     const [formState, setFormState] = useState('idle'); // idle, sending, success
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setFormState('sending');
-        // Simulate API call
-        setTimeout(() => {
-            setFormState('success');
-        }, 1500);
+
+        const formData = new FormData(e.target);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setFormState('success');
+            } else {
+                alert('Something went wrong. Please try again.');
+                setFormState('idle');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Something went wrong. Please try again.');
+            setFormState('idle');
+        }
     };
 
     return (
@@ -135,6 +160,7 @@ const ContactPage = () => {
                                             <div className="space-y-2">
                                                 <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Full Name</label>
                                                 <input
+                                                    name="name"
                                                     required
                                                     type="text"
                                                     placeholder="John Doe"
@@ -144,6 +170,7 @@ const ContactPage = () => {
                                             <div className="space-y-2">
                                                 <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address</label>
                                                 <input
+                                                    name="email"
                                                     required
                                                     type="email"
                                                     placeholder="john@example.com"
@@ -155,7 +182,7 @@ const ContactPage = () => {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Subject</label>
                                             <div className="relative">
-                                                <select className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/5 transition-all outline-none appearance-none cursor-pointer font-medium">
+                                                <select name="subject" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/5 transition-all outline-none appearance-none cursor-pointer font-medium">
                                                     <option>General Support</option>
                                                     <option>Vendor Partnerships</option>
                                                     <option>Performance Bug</option>
@@ -174,6 +201,7 @@ const ContactPage = () => {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Message</label>
                                             <textarea
+                                                name="message"
                                                 required
                                                 rows={5}
                                                 placeholder="Tell us more about your inquiry..."

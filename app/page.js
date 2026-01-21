@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import LoadingScreen from './components/landing/LoadingScreen';
 import Navbar from './components/landing/Navbar';
 import Hero from './components/landing/Hero';
+import WhyFitCoins from './components/landing/WhyFitCoins';
 import Features from './components/landing/Features';
+import Activities from './components/landing/Activities';
 import VendorCTA from './components/landing/VendorCTA';
 // import Testimonials from './components/landing/Testimonials';
 import Footer from './components/landing/Footer';
@@ -17,13 +19,15 @@ export default function App() {
 
       <div
         className={`transition-all duration-1000 ease-out ${isLoading
-            ? 'opacity-0 scale-95 pointer-events-none translate-y-4'
-            : 'opacity-100 scale-100 translate-y-0'
+          ? 'opacity-0 scale-95 pointer-events-none translate-y-4'
+          : 'opacity-100 scale-100 translate-y-0'
           }`}
       >
         <Navbar />
         <Hero />
+        <WhyFitCoins />
         <Features />
+        <Activities />
         <VendorCTA />
         {/* <Testimonials /> */}
         <Footer />

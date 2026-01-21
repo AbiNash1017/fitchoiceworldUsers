@@ -15,5 +15,5 @@ export const APP_LINKS = {
 export const CONTACT_INFO = {
     email: "support@fitchoiceworld.com",
     phone: "+91 9036815005",
-    address: "#269, 4th Main, Bogadi Bank Colony, Mysore 570026"
+    address: "1st Floor, 911, 28th Main Rd, above Karnataka Bank, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka 560041"
 };
