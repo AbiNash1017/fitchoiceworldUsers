@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Fit Choice World",
-  description: "Fit Choice World",
+  title: "FYKLI-FitChoiceWorld",
+  description: "FYKLI by Fit Choice World",
 };
 
 export default function RootLayout({ children }) {
