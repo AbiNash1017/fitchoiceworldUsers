@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "FYKLI-FitChoiceWorld",
-  description: "FYKLI by Fit Choice World",
+  title: "fykli by Fit Choice World",
+  description: "fykli by Fit Choice World, Fitness based on your mood",
 };
 
 export default function RootLayout({ children }) {
