@@ -45,8 +45,8 @@ const Navbar = () => {
                         alt="Fit Choice World Logo"
                         className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
                     />
-                    <span className={`text-xl font-bold tracking-tight hidden sm:block transition-colors ${logoTextClasses}`}>
-                        FYKLI <span className="font-light opacity-80">- Fit Choice World</span>
+                    <span className={`text-xl font-bold hidden sm:block transition-colors ${logoTextClasses}`}>
+                        Fykli <span className="font-light tracking-tight opacity-80">-  Fit Choice World</span>
                     </span>
                 </Link>
 
