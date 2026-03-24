@@ -10,7 +10,7 @@ const VendorPaymentPolicy = () => {
             <section>
                 <p>At Fit Choice World, we value our partnerships with vendors and ensure a smooth and transparent payment process. Below are the terms related to vendor payments:</p>
 
-                <ol className="list-decimal pl-6 space-y-8 mt-8">
+                <ol>
                     <li>
                         <strong className="block text-xl mb-2">Service Delivery Confirmation</strong>
                         <p>Vendors must ensure the complete delivery of services as per the agreed-upon terms before initiating a payment request.</p>
@@ -30,21 +30,18 @@ const VendorPaymentPolicy = () => {
                 </ol>
             </section>
 
-            <section className="mt-12 bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-100 dark:border-gray-700">
-                <h2 className="text-2xl font-bold mb-4">Communication and Support</h2>
-                <p className="mb-6 text-gray-600 dark:text-gray-400">For inquiries related to payments, vendors may contact our support team at:</p>
-                <ul className="space-y-3">
-                    <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                        <span className="font-semibold w-24">Email:</span>
-                        <a href={`mailto:${CONTACT_INFO.email}`} className="text-orange-600 dark:text-orange-400 hover:underline">{CONTACT_INFO.email}</a>
+            <section>
+                <h2>Communication and Support</h2>
+                <p>For inquiries related to payments, vendors may contact our support team at:</p>
+                <ul>
+                    <li>
+                        <strong>Email:</strong> {CONTACT_INFO.email}
                     </li>
-                    <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                        <span className="font-semibold w-24">Phone:</span>
-                        <a href={`tel:${CONTACT_INFO.phone}`} className="text-orange-600 dark:text-orange-400 hover:underline">{CONTACT_INFO.phone}</a>
+                    <li>
+                        <strong>Phone:</strong> {CONTACT_INFO.phone}
                     </li>
-                    <li className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                        <span className="font-semibold w-24">Address:</span>
-                        <span>{CONTACT_INFO.address}</span>
+                    <li>
+                        <strong>Address:</strong> {CONTACT_INFO.address}
                     </li>
                 </ul>
             </section>

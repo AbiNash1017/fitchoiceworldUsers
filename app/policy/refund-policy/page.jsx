@@ -39,7 +39,7 @@ const RefundPolicy = () => {
 
             <section>
                 <h2>Exceptions to Refunds</h2>
-                <ul className="list-disc pl-6 space-y-2">
+                <ul>
                     <li>No refunds will be issued for Change of mind after the service has been initiated or delivered.</li>
                     <li>No refunds will be issued for Incomplete or incorrect information provided by the user.</li>
                     <li>No refunds will be issued for Breach of the terms and conditions by the user.</li>
@@ -49,7 +49,7 @@ const RefundPolicy = () => {
             <section>
                 <h2>Contact Us</h2>
                 <p>If you have any questions about this Refund Policy, You can contact us:</p>
-                <ul className="list-disc pl-6 space-y-1">
+                <ul>
                     <li>Email: {CONTACT_INFO.email}</li>
                     <li>Phone Number: {CONTACT_INFO.phone}</li>
                     <li>Address: {CONTACT_INFO.address}</li>

@@ -73,7 +73,7 @@ const ContactPage = () => {
                             Get in Touch
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
-                            We're here to <span className="text-gray-400">help you.</span>
+                            We're here to <span className="text-brand-accent">help you.</span>
                         </h1>
                         <p className="text-xl text-gray-500 leading-relaxed">
                             Have questions about the app? Need help with your account? Our team is available to support your fitness journey.
@@ -92,7 +92,7 @@ const ContactPage = () => {
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                                     <div className="max-w-md space-y-6">
                                         <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-                                            Your <span className="italic bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">fitness journey</span> starts here.
+                                            Your <span className="italic bg-gradient-to-r from-white to-brand-accent bg-clip-text text-transparent">fitness journey</span> starts here.
                                         </h3>
                                         <p className="text-white/80 text-lg font-medium leading-relaxed">
                                             Every champion was once a beginner. Take the first step today and transform your tomorrow.
@@ -108,17 +108,17 @@ const ContactPage = () => {
 
                             <div className="grid sm:grid-cols-2 gap-6">
                                 {[
-                                    { icon: <Mail className="w-5 h-5 text-black" />, label: "Email Us", value: CONTACT_INFO.email, href: `mailto:${CONTACT_INFO.email}` },
-                                    { icon: <Phone className="w-5 h-5 text-black" />, label: "Call Us", value: CONTACT_INFO.phone, href: `tel:${CONTACT_INFO.phone}` },
-                                    { icon: <Clock className="w-5 h-5 text-black" />, label: "Support Hours", value: "6 AM - 6 PM (Mon-Sat)" },
-                                    { icon: <MessageSquare className="w-5 h-5 text-black" />, label: "Quick Response", value: "Within 24 hours" }
+                                    { icon: <Mail className="w-5 h-5 text-brand-accent" />, label: "Email Us", value: CONTACT_INFO.email, href: `mailto:${CONTACT_INFO.email}` },
+                                    { icon: <Phone className="w-5 h-5 text-brand-accent" />, label: "Call Us", value: CONTACT_INFO.phone, href: `tel:${CONTACT_INFO.phone}` },
+                                    { icon: <Clock className="w-5 h-5 text-brand-accent" />, label: "Support Hours", value: "6 AM - 6 PM (Mon-Sat)" },
+                                    { icon: <MessageSquare className="w-5 h-5 text-brand-accent" />, label: "Quick Response", value: "Within 24 hours" }
                                 ].map((item, idx) => {
                                     const Tag = item.href ? 'a' : 'div';
                                     return (
                                         <Tag
                                             key={idx}
                                             href={item.href}
-                                            className={`p-6 rounded-[2rem] bg-gray-50 border border-gray-100 hover:border-black/10 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group block ${item.href ? 'cursor-pointer' : ''}`}
+                                            className={`p-6 rounded-[2rem] bg-gray-50 border border-gray-100 hover:border-brand-accent/20 hover:shadow-xl hover:shadow-red-100/50 transition-all duration-300 group block ${item.href ? 'cursor-pointer' : ''}`}
                                         >
                                             <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
                                                 {item.icon}
@@ -134,7 +134,7 @@ const ContactPage = () => {
                         {/* Contact Form */}
                         <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl shadow-gray-200/50 border border-gray-100 relative overflow-hidden">
                             {/* Form Decorative Element */}
-                            <div className="absolute -top-24 -right-24 w-48 h-48 bg-gray-50 rounded-full blur-3xl opacity-50"></div>
+                            <div className="absolute -top-24 -right-24 w-48 h-48 bg-red-50 rounded-full blur-3xl opacity-50"></div>
 
                             {formState === 'success' ? (
                                 <div className="text-center py-12 animate-in zoom-in duration-500 relative z-10">
@@ -153,7 +153,7 @@ const ContactPage = () => {
                             ) : (
                                 <div className="relative z-10">
                                     <h2 className="text-4xl font-bold mb-2 tracking-tight">Drop us a line.</h2>
-                                    <p className="text-gray-500 mb-10 italic">We'd love to hear from you.</p>
+                                    <p className="text-gray-500 mb-10 italic">We'd love to hear from <span className="text-brand-accent font-bold">you.</span></p>
 
                                     <form onSubmit={handleSubmit} className="space-y-6">
                                         <div className="grid md:grid-cols-2 gap-6">
@@ -164,7 +164,7 @@ const ContactPage = () => {
                                                     required
                                                     type="text"
                                                     placeholder="John Doe"
-                                                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/5 transition-all outline-none font-medium"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-brand-accent/20 transition-all outline-none font-medium"
                                                 />
                                             </div>
                                             <div className="space-y-2">
@@ -174,7 +174,7 @@ const ContactPage = () => {
                                                     required
                                                     type="email"
                                                     placeholder="john@example.com"
-                                                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-black/5 transition-all outline-none font-medium"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-brand-accent/20 transition-all outline-none font-medium"
                                                 />
                                             </div>
                                         </div>
@@ -234,7 +234,7 @@ const ContactPage = () => {
             <section className="py-20 border-t border-gray-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-wrap justify-between items-center gap-8 opacity-40 hover:opacity-100 transition-opacity duration-700">
-                        <p className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400">Join the movement</p>
+                        <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">Join the movement</p>
                         <div className="flex gap-12 text-2xl font-black italic tracking-tighter">
                             <span>STRENGTH</span>
                             <span>COMMUNITY</span>

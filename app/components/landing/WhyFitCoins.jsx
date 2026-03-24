@@ -1,64 +1,136 @@
+'use client';
 import React from 'react';
-import { CheckCircle2, Coins } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { 
+  Zap, 
+  ShieldCheck, 
+  MapPin, 
+  Clock, 
+  CreditCard,
+  Coins
+} from 'lucide-react';
 
 const WhyFitCoins = () => {
-    const benefits = [
-        "No monthly memberships — pay only when you work out",
-        "Use at any partner fitness center across the city",
-        "Coins never expire — use them at your own pace",
-        "Track all your workouts in one app",
-        "Earn bonus coins through referrals and challenges"
-    ];
+  const benefits = [
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "No Memberships",
+      description: "Stop paying for time you don't use. Pay only for the sessions you attend.",
+      color: "from-brand-primary to-brand-accent"
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: "City-Wide Access",
+      description: "One wallet, infinite possibilities. Access any partner gym or studio nearby.",
+      color: "from-brand-primary to-brand-accent"
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "Never Expire",
+      description: "Your coins stay with you. Use them today, next month, or whenever you're ready.",
+      color: "from-brand-primary to-brand-accent"
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6" />,
+      title: "Safe & Secure",
+      description: "Transparent transactions and instant bookings. No hidden fees, ever.",
+      color: "from-brand-primary to-brand-accent"
+    }
+  ];
 
-    return (
-        <section className="py-12 px-6 bg-white">
-            <div className="max-w-7xl mx-auto">
-                <div className="bg-[#111111] rounded-[2.5rem] p-8 md:p-16 overflow-hidden relative shadow-2xl">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                        {/* Left Content */}
-                        <div className="space-y-8">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-                                Why Fit Coins?
-                            </h2>
+  return (
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-                            <div className="space-y-6">
-                                {benefits.map((benefit, index) => (
-                                    <div key={index} className="flex items-start gap-4 group">
-                                        <div className="mt-1">
-                                            <CheckCircle2 className="w-6 h-6 text-green-500 fill-green-500/20" />
-                                        </div>
-                                        <p className="text-lg text-gray-300 group-hover:text-white transition-colors duration-200">
-                                            {benefit}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          
+          {/* Left Side: Visual/Hero */}
+          <div className="lg:w-1/2 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative"
+            >
+              {/* Floating Coin Visual */}
+              <div className="relative z-10 bg-gradient-to-br from-[#111] to-[#222] rounded-[3rem] p-12 md:p-16 shadow-2xl border border-white/10 flex flex-col items-center">
+                <motion.div
+                  animate={{ 
+                    y: [0, -20, 0],
+                    rotateY: [0, 180, 360]
+                  }}
+                  transition={{ 
+                    duration: 6, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                  className="w-32 h-32 md:w-48 md:h-48 rounded-full flex items-center justify-center mb-8 drop-shadow-[0_20px_50px_rgba(255,165,0,0.3)]"
+                >
+                  <img src="/fitcoin.svg" alt="Fit Coin" className="w-full h-full object-contain" />
+                </motion.div>
+                
+                <h3 className="text-3xl font-black text-white text-center mb-4 tracking-tighter">
+                  FIT COINS
+                </h3>
+                <p className="text-gray-400 text-center max-w-xs text-sm leading-relaxed">
+                  The universal currency for fitness. Empowering you to train anywhere, anytime.
+                </p>
+                
+                {/* Decorative circles */}
+                <div className="absolute top-10 left-10 w-2 h-2 rounded-full bg-brand-primary animate-ping" />
+                <div className="absolute bottom-10 right-10 w-3 h-3 rounded-full bg-brand-accent animate-pulse" />
+              </div>
 
-                        {/* Right Content - Visual */}
-                        <div className="flex justify-center lg:justify-end">
-                            <div className="relative">
-                                {/* Glow Effect */}
-                                <div className="absolute inset-0 bg-orange-500 blur-[80px] opacity-20 rounded-full animate-pulse" />
+              {/* Backglow */}
+              <div className="absolute inset-0 bg-brand-primary/10 blur-[100px] rounded-full z-0 translate-y-10" />
+            </motion.div>
+          </div>
 
-                                {/* Orange Circle */}
-                                <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex flex-col items-center justify-center text-white shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                                    <Coins className="w-20 h-20 md:w-24 md:h-24 mb-4 text-white" />
-                                    <span className="text-2xl md:text-3xl font-bold tracking-tight">Fit Coins</span>
-                                </div>
-                            </div>
-                        </div>
+          {/* Right Side: Benefits Grid */}
+          <div className="lg:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter mb-6 leading-tight">
+                One Coin. <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Endless Possibilities.</span>
+              </h2>
+              <p className="text-gray-600 mb-12 text-lg">
+                Fit Choice World replaces expensive, locked-in memberships with a flexible coin-based system.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-8">
+                {benefits.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="group"
+                  >
+                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      {item.icon}
                     </div>
+                    <h4 className="font-bold text-black mb-2 text-lg group-hover:text-brand-primary transition-colors">{item.title}</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
 
-                    {/* Background details */}
-                    <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-                        <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[100px]" />
-                        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-green-500/5 rounded-full blur-[100px]" />
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default WhyFitCoins;

@@ -27,7 +27,7 @@ const CancellationPolicy = () => {
             <section>
                 <h2>Contact Us</h2>
                 <p>If you have any questions about this Cancellation Policy, You can contact us:</p>
-                <ul className="list-disc pl-6 space-y-1">
+                <ul>
                     <li>Email: {CONTACT_INFO.email}</li>
                     <li>Phone Number: {CONTACT_INFO.phone}</li>
                     <li>Address: {CONTACT_INFO.address}</li>

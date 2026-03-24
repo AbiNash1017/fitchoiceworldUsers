@@ -1,142 +1,178 @@
 'use client';
 import React from 'react';
-import { Building2, Users, TrendingUp, Calendar, ShieldCheck, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { 
+  Users, 
+  TrendingUp, 
+  Calendar, 
+  ShieldCheck, 
+  Building, 
+  Plus, 
+  ArrowRight 
+} from 'lucide-react';
 
 const VendorCTA = () => {
-    const features = [
-        {
-            icon: <Users className="w-5 h-5" />,
-            title: "Reach New Customers",
-            desc: "Connect with a vast community"
-        },
-        {
-            icon: <TrendingUp className="w-5 h-5" />,
-            title: "Boost Revenue",
-            desc: "Fill empty slots instantly"
-        },
-        {
-            icon: <Calendar className="w-5 h-5" />,
-            title: "Easy Scheduling",
-            desc: "Manage bookings in one place"
-        },
-        {
-            icon: <ShieldCheck className="w-5 h-5" />,
-            title: "Guaranteed Payments",
-            desc: "Get paid within 24 hours"
-        }
-    ];
+  const benefits = [
+    {
+      icon: <Users size={20} />,
+      title: "Reach New Customers",
+      desc: "Connect with a vast community of fitness lovers.",
+      color: "text-brand-primary",
+      bg: "bg-brand-primary/10"
+    },
+    {
+      icon: <TrendingUp size={20} />,
+      title: "Boost Revenue",
+      desc: "Fill empty slots instantly during off-peak hours.",
+      color: "text-brand-primary",
+      bg: "bg-brand-primary/10"
+    },
+    {
+      icon: <Calendar size={20} />,
+      title: "Easy Scheduling",
+      desc: "Manage all your RTP and gym bookings in one place.",
+      color: "text-brand-primary",
+      bg: "bg-brand-primary/10"
+    },
+    {
+      icon: <ShieldCheck size={20} />,
+      title: "Guaranteed Payments",
+      desc: "Get paid securely and quickly within 24 hours.",
+      color: "text-brand-primary",
+      bg: "bg-brand-primary/10"
+    }
+  ];
 
-    return (
-        <section id="vendor-cta" className="py-24 md:py-32 bg-white text-black overflow-hidden relative">
-            {/* Background Gradients to match warm Hero theme */}
-            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-orange-100/40 rounded-full blur-[150px] pointer-events-none"></div>
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-orange-50/40 rounded-full blur-[120px] pointer-events-none"></div>
+  return (
+    <section id="vendor-cta" className="h-screen min-h-[850px] flex items-center bg-white relative overflow-hidden px-4 md:px-8 border-t border-gray-100">
+      
+      {/* Abstract Outline SVG Art Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10 z-0">
+        <motion.div 
+          animate={{ y: [-20, 20, -20], rotate: [-2, 2, -2] }} 
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -left-20 md:-left-10 top-10"
+        >
+          <Building className="w-[25rem] h-[25rem] md:w-[35rem] md:h-[35rem] text-black" strokeWidth={1} />
+        </motion.div>
+        
+        <motion.div 
+          animate={{ y: [20, -20, 20], scale: [0.95, 1.05, 0.95] }} 
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -right-20 md:-right-10 bottom-10"
+        >
+          <TrendingUp className="w-[30rem] h-[30rem] md:w-[40rem] md:h-[40rem] text-black" strokeWidth={1} />
+        </motion.div>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    {/* Left Content */}
-                    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000">
-                        {/* Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-sm font-medium text-orange-700">
-                            <Building2 className="w-4 h-4" />
-                            For Fitness Centers
-                        </div>
+        <motion.div 
+          animate={{ x: [-15, 15, -15], rotate: [5, -5, 5] }} 
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[30%] -bottom-32 hidden md:block"
+        >
+          <ShieldCheck className="w-[25rem] h-[25rem] md:w-[30rem] md:h-[30rem] text-black" strokeWidth={1} />
+        </motion.div>
 
-                        {/* Title */}
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-                            List Your{' '}
-                            <span className="text-orange-500">
-                                Fitness Center
-                            </span>
-                        </h2>
+        <motion.div 
+          animate={{ y: [-15, 15, -15], rotate: [-10, 10, -10] }} 
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[25%] -top-20 hidden md:block"
+        >
+          <Users className="w-[20rem] h-[20rem] md:w-[25rem] md:h-[25rem] text-black" strokeWidth={1} />
+        </motion.div>
+      </div>
 
-                        {/* Description */}
-                        <p className="text-lg md:text-xl text-gray-500 leading-relaxed max-w-xl">
-                            Join the FitChoiceWorld network and get discovered by thousands of fitness enthusiasts. Accept Fit Coins and grow your business.
-                        </p>
-
-                        {/* Feature Cards Grid */}
-                        <div className="grid grid-cols-2 gap-4 pt-4">
-                            {features.map((feature, idx) => (
-                                <div
-                                    key={idx}
-                                    className="group p-4 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-orange-100 transition-all duration-300"
-                                >
-                                    <div className="flex items-start gap-3">
-                                        <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 flex-shrink-0">
-                                            {feature.icon}
-                                        </div>
-                                        <div>
-                                            <h3 className="font-semibold text-black text-sm md:text-base mb-1">
-                                                {feature.title}
-                                            </h3>
-                                            <p className="text-gray-500 text-xs md:text-sm">
-                                                {feature.desc}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Right Content - CTA Card */}
-                    <div className="flex items-center justify-center lg:justify-end animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200">
-                        <div className="w-full max-w-md p-8 md:p-10 rounded-3xl bg-gray-50 border border-gray-100 relative overflow-hidden shadow-lg">
-                            {/* Glow Effect */}
-                            <div className="absolute -top-20 -right-20 w-40 h-40 bg-orange-100 rounded-full blur-3xl pointer-events-none"></div>
-
-                            <div className="relative z-10 text-center space-y-8">
-                                <h3 className="text-2xl md:text-3xl font-bold text-black">
-                                    Register Your Center
-                                </h3>
-
-                                {/* Social Proof / Avatar Stack */}
-                                <div className="flex flex-col items-center gap-3">
-                                    <div className="flex -space-x-3">
-                                        {[1, 2, 3, 4].map((i) => (
-                                            <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center overflow-hidden">
-                                                <div className="w-full h-full flex items-center justify-center">
-                                                    <Building2 className="w-4 h-4 text-gray-400" />
-                                                </div>
-                                            </div>
-                                        ))}
-                                        <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-900 flex items-center justify-center text-xs font-bold text-white">
-                                            +
-                                        </div>
-                                    </div>
-                                    <p className="text-sm text-gray-500">
-                                        Trusted by top fitness brands
-                                    </p>
-                                </div>
-
-                                {/* Animated CTA Button */}
-                                <Link
-                                    href="https://center.fitchoiceworld.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group relative inline-flex items-center justify-center gap-2 w-full px-8 py-3.5 rounded-xl bg-black text-white font-semibold text-base overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
-                                >
-                                    {/* Shine Effect */}
-                                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></span>
-
-                                    {/* Button Content */}
-                                    <Building2 className="w-4 h-4" />
-                                    <span className="relative z-10">Register My Fitness Center</span>
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                                </Link>
-
-                                <p className="text-xs text-gray-400">
-                                    By registering, you agree to our Terms of Service and Partner Agreement
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Column: Content & Grid */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 mb-6">
+              <Building size={16} className="text-brand-primary" />
+              <span className="text-sm font-bold text-brand-primary">For Fitness Centers</span>
             </div>
-        </section>
-    );
+            
+            <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter mb-6 leading-[1.1]">
+              List Your <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Fitness Center</span>
+            </h2>
+            
+            <p className="text-gray-600 text-lg mb-10 max-w-lg leading-relaxed">
+              Join the Fykli network and get discovered by thousands of fitness enthusiasts. Monetize your empty slots, accept seamless bookings, and grow your business.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {benefits.map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="p-5 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all cursor-default"
+                >
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-4 ${item.bg} ${item.color}`}>
+                    {item.icon}
+                  </div>
+                  <h4 className="font-bold text-black mb-1">{item.title}</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right Column: Registration Card */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            {/* Soft decorative background glow */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-brand-accent/10 rounded-[3rem] blur-2xl transform scale-105 pointer-events-none"></div>
+            
+            <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100 relative z-10 flex flex-col items-center text-center">
+              
+              <h3 className="text-3xl font-black text-black mb-8">Register Your Center</h3>
+              
+              {/* Fake Avatars / Trusted Badges */}
+              <div className="flex flex-col items-center mb-10">
+                <div className="flex -space-x-3 mb-4">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center shadow-sm">
+                      <Building size={16} className="text-gray-400" />
+                    </div>
+                  ))}
+                  <div className="w-12 h-12 rounded-full border-2 border-white bg-black flex items-center justify-center shadow-sm z-10 text-white">
+                    <Plus size={16} />
+                  </div>
+                </div>
+                <p className="text-sm font-medium text-gray-500">Trusted by top fitness brands</p>
+              </div>
+
+              <a 
+                href="https://center.fitchoiceworld.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 rounded-xl bg-black text-white font-bold flex items-center justify-center gap-3 hover:bg-gray-900 transition-colors shadow-lg group"
+              >
+                <Building size={18} className="text-gray-400 group-hover:text-white transition-colors" />
+                Register My Center
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              
+              <p className="text-xs text-gray-400 mt-6 max-w-xs">
+                By registering, you agree to our Terms of Service and Partner Agreement.
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default VendorCTA;

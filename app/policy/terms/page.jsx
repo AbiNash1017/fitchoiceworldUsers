@@ -18,7 +18,7 @@ const TermsAndConditions = () => {
 
                 <h3 className="mt-6">Definitions</h3>
                 <p>For the purposes of these Terms and Conditions:</p>
-                <ul className="list-disc pl-6 space-y-4">
+                <ul>
                     <li><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named Fit Choice World or visit the website www.fitchoiceworld.com</li>
                     <li><strong>Application Store</strong> means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.</li>
                     <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>

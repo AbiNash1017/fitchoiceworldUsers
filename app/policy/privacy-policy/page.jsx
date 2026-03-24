@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
 
                 <h3>Definitions</h3>
                 <p>For the purposes of this Privacy Policy:</p>
-                <ul className="list-disc pl-6 space-y-2">
+                <ul>
                     <li>
                         <strong>Account</strong> means a unique account created for You to access our Service or parts of our
                         Service.
@@ -68,7 +68,7 @@ const PrivacyPolicy = () => {
                         Service or from the Service infrastructure itself (for example, the duration of a page visit).
                     </li>
                     <li>
-                        <strong>Website</strong> refers to Fit Choice World, accessible from <Link className="underline text-orange-600 hover:text-orange-700 font-medium" href={"/"}>www.fitchoiceworld.com</Link>
+                        <strong>Website</strong> refers to Fit Choice World, accessible from <Link href={"/"}>www.fitchoiceworld.com</Link>
                     </li>
                     <li>
                         <strong>You</strong> mean the individual accessing or using the Service, or the company, or other
@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
                     While using Our Service, We may ask You to provide Us with certain personally identifiable information
                     that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
                 </p>
-                <ul className="list-disc pl-6 space-y-1">
+                <ul>
                     <li>Email address</li>
                     <li>First name and last name</li>
                     <li>Phone number</li>
@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
                 <p>
                     We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:
                 </p>
-                <ul className="list-disc pl-6 space-y-4">
+                <ul>
                     <li>
                         <strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.
                     </li>
@@ -129,7 +129,7 @@ const PrivacyPolicy = () => {
                 <p>
                     We use both Session and Persistent Cookies for the purposes set out below:
                 </p>
-                <ul className="space-y-6">
+                <ul>
                     <li>
                         <strong className="block text-lg">Necessary / Essential Cookies</strong>
                         <p>
@@ -162,7 +162,7 @@ const PrivacyPolicy = () => {
             <section>
                 <h2>Use of Your Personal Data</h2>
                 <p>The Company may use Personal Data for the following purposes:</p>
-                <ul className="list-disc pl-6 space-y-4">
+                <ul>
                     <li>
                         <strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.
                     </li>
@@ -221,7 +221,7 @@ const PrivacyPolicy = () => {
             <section>
                 <h2>Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-                <ul className="list-disc pl-6 space-y-1">
+                <ul>
                     <li>Email: {CONTACT_INFO.email}</li>
                     <li>Phone Number: {CONTACT_INFO.phone}</li>
                     <li>Address: {CONTACT_INFO.address}</li>
