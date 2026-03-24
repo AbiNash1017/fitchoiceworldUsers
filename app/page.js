@@ -23,15 +23,19 @@ import Features from './components/landing/Features';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
 
   return (
     <main className="bg-gray-50 min-h-screen font-sans selection:bg-[#DC143C] selection:text-white">
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       
       <div className={`transition-all duration-1000 ease-out ${isLoading ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
-        <Navbar />
+        <Navbar onOpenDownloadModal={() => setShowDownloadModal(true)} />
         <main>
-          <Hero />
+          <Hero 
+            showDownloadModal={showDownloadModal} 
+            onCloseDownloadModal={() => setShowDownloadModal(false)} 
+          />
           <Marquee />
           <BentoFeatures />
           <WhyFitCoins />

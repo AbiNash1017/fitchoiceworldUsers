@@ -60,29 +60,31 @@ const WhyFitCoins = () => {
               <div className="relative z-10 bg-gradient-to-br from-[#111] to-[#222] rounded-[3rem] p-12 md:p-16 shadow-2xl border border-white/10 flex flex-col items-center">
                 <motion.div
                   animate={{ 
-                    y: [0, -20, 0],
-                    rotateY: [0, 180, 360]
+                    y: [0, -20, 0]
+                  }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 15,
+                    transition: { duration: 0.3 }
                   }}
                   transition={{ 
-                    duration: 6, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
+                    y: {
+                      duration: 4, 
+                      repeat: Infinity, 
+                      ease: "easeInOut"
+                    }
                   }}
-                  className="w-32 h-32 md:w-48 md:h-48 rounded-full flex items-center justify-center mb-8 drop-shadow-[0_20px_50px_rgba(255,165,0,0.3)]"
+                  className="w-32 h-32 md:w-48 md:h-48 rounded-full flex items-center justify-center mb-8 drop-shadow-[0_20px_50px_rgba(255,165,0,0.3)] cursor-pointer"
                 >
                   <img src="/fitcoin.svg" alt="Fit Coin" className="w-full h-full object-contain" />
                 </motion.div>
-                
+                <p className="text-gray-400 text-center max-w-xs text-sm leading-relaxed">INTRODUCING</p>
                 <h3 className="text-3xl font-black text-white text-center mb-4 tracking-tighter">
                   FIT COINS
                 </h3>
                 <p className="text-gray-400 text-center max-w-xs text-sm leading-relaxed">
-                  The universal currency for fitness. Empowering you to train anywhere, anytime.
+                  The universal currency for fitness, sports and wellness. Empowering you to train anywhere, anytime.
                 </p>
-                
-                {/* Decorative circles */}
-                <div className="absolute top-10 left-10 w-2 h-2 rounded-full bg-brand-primary animate-ping" />
-                <div className="absolute bottom-10 right-10 w-3 h-3 rounded-full bg-brand-accent animate-pulse" />
               </div>
 
               {/* Backglow */}

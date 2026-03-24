@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wallet, MapPin, QrCode, Sparkles } from 'lucide-react';
+import { Wallet, MapPin, Users, Sparkles } from 'lucide-react';
 
 const Features = () => {
   const steps = [
@@ -13,13 +13,13 @@ const Features = () => {
     {
       icon: <MapPin className="w-8 h-8" />,
       title: "Find a Center",
-      desc: "Explore 500+ premium gyms, turfs, and studios. Filter by sport, distance, or vibe, and lock in your slot.",
+      desc: "Explore premium gyms, turfs, and studios. Filter by sport, distance, or vibe, and lock in your slot.",
       step: "02"
     },
     {
-      icon: <QrCode className="w-8 h-8" />,
-      title: "Scan & Dominate",
-      desc: "Flash your QR code at the venue, instantly redeem your coins, and get straight to your workout or match.",
+      icon: <Users className="w-8 h-8" />,
+      title: "Match & Play",
+      desc: "Create games, connect with fellow athletes around you, and play together. Your next big match is just a tap away.",
       step: "03"
     }
   ];

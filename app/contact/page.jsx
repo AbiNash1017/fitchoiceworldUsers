@@ -12,10 +12,12 @@ import {
 } from 'lucide-react';
 import Navbar from '../components/landing/Navbar';
 import Footer from '../components/landing/Footer';
+import AppDownloadModal from '../components/landing/AppDownloadModal';
 import { CONTACT_INFO } from '@/app/constants';
 
 const ContactPage = () => {
     const [formState, setFormState] = useState('idle'); // idle, sending, success
+    const [showDownloadModal, setShowDownloadModal] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -53,10 +55,10 @@ const ContactPage = () => {
 
     return (
         <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white font-sans">
-            <Navbar />
+            <Navbar onOpenDownloadModal={() => setShowDownloadModal(true)} />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-x-hidden">
                 {/* Abstract Background */}
                 <div className="absolute inset-0 z-0">
                     <img
@@ -67,46 +69,32 @@ const ContactPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
+                {/* App Download Modal - High z-index overlay */}
+                <AppDownloadModal 
+                    isOpen={showDownloadModal} 
+                    onClose={() => setShowDownloadModal(false)}
+                    isAbsolute={true}
+                    position="top"
+                />
+
+                <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+                    <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-[10px] font-bold uppercase tracking-widest mb-4">
                             Get in Touch
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
+                        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-6">
                             We're here to <span className="text-brand-accent">help you.</span>
                         </h1>
-                        <p className="text-xl text-gray-500 leading-relaxed">
-                            Have questions about the app? Need help with your account? Our team is available to support your fitness journey.
+                        <p className="text-lg md:text-xl text-gray-500 leading-relaxed">
+                             Have questions about the app? Need help with your account? Our team is available to support your fitness journey.
                         </p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-12 items-start">
                         {/* Contact Information */}
                         <div className="space-y-8">
-                            <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl group border border-gray-100 bg-gradient-to-br from-black via-gray-900 to-gray-800">
-                                <img
-                                    src="/images/landing_hero.jpg"
-                                    alt="Your Fitness Journey"
-                                    className="w-full h-full object-cover opacity-20 transform group-hover:scale-110 transition-transform duration-1000"
-                                />
-                                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                                    <div className="max-w-md space-y-6">
-                                        <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-                                            Your <span className="italic bg-gradient-to-r from-white to-brand-accent bg-clip-text text-transparent">fitness journey</span> starts here.
-                                        </h3>
-                                        <p className="text-white/80 text-lg font-medium leading-relaxed">
-                                            Every champion was once a beginner. Take the first step today and transform your tomorrow.
-                                        </p>
-                                        <div className="pt-4">
-                                            <Link href="/" className="inline-block bg-white text-black px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/20">
-                                                Get Started Now
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div className="grid sm:grid-cols-2 gap-6">
+                            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
                                 {[
                                     { icon: <Mail className="w-5 h-5 text-brand-accent" />, label: "Email Us", value: CONTACT_INFO.email, href: `mailto:${CONTACT_INFO.email}` },
                                     { icon: <Phone className="w-5 h-5 text-brand-accent" />, label: "Call Us", value: CONTACT_INFO.phone, href: `tel:${CONTACT_INFO.phone}` },
@@ -118,13 +106,13 @@ const ContactPage = () => {
                                         <Tag
                                             key={idx}
                                             href={item.href}
-                                            className={`p-6 rounded-[2rem] bg-gray-50 border border-gray-100 hover:border-brand-accent/20 hover:shadow-xl hover:shadow-red-100/50 transition-all duration-300 group block ${item.href ? 'cursor-pointer' : ''}`}
+                                            className={`p-5 md:p-6 rounded-[2rem] bg-gray-50 border border-gray-100 hover:border-brand-accent/20 hover:shadow-xl hover:shadow-red-100/50 transition-all duration-300 group block ${item.href ? 'cursor-pointer' : ''}`}
                                         >
-                                            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                            <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-sm group-hover:scale-110 transition-transform">
                                                 {item.icon}
                                             </div>
-                                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">{item.label}</p>
-                                            <p className="font-bold text-gray-900 leading-tight">{item.value}</p>
+                                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1 md:mb-2">{item.label}</p>
+                                            <p className="font-bold text-gray-900 leading-tight break-all">{item.value}</p>
                                         </Tag>
                                     );
                                 })}
@@ -132,7 +120,7 @@ const ContactPage = () => {
                         </div>
 
                         {/* Contact Form */}
-                        <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl shadow-gray-200/50 border border-gray-100 relative overflow-hidden">
+                        <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-12 shadow-2xl shadow-gray-200/50 border border-gray-100 relative overflow-hidden">
                             {/* Form Decorative Element */}
                             <div className="absolute -top-24 -right-24 w-48 h-48 bg-red-50 rounded-full blur-3xl opacity-50"></div>
 
@@ -152,8 +140,8 @@ const ContactPage = () => {
                                 </div>
                             ) : (
                                 <div className="relative z-10">
-                                    <h2 className="text-4xl font-bold mb-2 tracking-tight">Drop us a line.</h2>
-                                    <p className="text-gray-500 mb-10 italic">We'd love to hear from <span className="text-brand-accent font-bold">you.</span></p>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Drop us a line.</h2>
+                                    <p className="text-gray-500 mb-8 md:mb-10 italic">We'd love to hear from <span className="text-brand-accent font-bold">you.</span></p>
 
                                     <form onSubmit={handleSubmit} className="space-y-6">
                                         <div className="grid md:grid-cols-2 gap-6">

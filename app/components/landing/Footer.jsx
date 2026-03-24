@@ -13,13 +13,13 @@ const Footer = () => {
           
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <img src={LOGO_URL} alt="Logo" className="h-10 w-auto brightness-0 invert" />
+              <img src={LOGO_URL} alt="Logo" className="h-10 w-auto" />
               <span className="text-xl font-bold transition-colors text-white">
                 Fykli <span className="font-light tracking-tight opacity-80">-  Fit Choice World</span>
               </span>
             </Link>
             <p className="text-gray-400 max-w-sm mb-8">
-              The ultimate ecosystem for fitness enthusiasts and sports lovers. Book, play, and connect in one tap.
+              The ultimate ecosystem for fitness, sports and wellness. Book, play, and connect in one tap.
             </p>
 
             {/* App Download Buttons */}

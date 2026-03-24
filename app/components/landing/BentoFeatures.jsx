@@ -165,9 +165,9 @@ const BentoFeatures = () => {
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-black mb-2 group-hover:text-brand-primary transition-colors">Fitgram</h3>
               <p className="text-gray-600 text-sm mb-6">Join the community. Share your progress, follow athletes, and stay motivated every single day.</p>
-              <button className="flex items-center gap-2 text-sm font-bold text-black group-hover:text-brand-primary transition-colors">
-                Explore Feed <motion.span whileHover={{ x: 5 }}><ArrowRight size={16} /></motion.span>
-              </button>
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider border border-brand-primary/20">
+                Coming Soon
+              </div>
             </div>
 
             {/* Background images for texture */}
