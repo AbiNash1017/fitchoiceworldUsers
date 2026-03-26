@@ -1,7 +1,7 @@
 export const LOGO_URL = "/images/fcw_transparent.png";
 
 export const SOCIAL_LINKS = {
-  instagram: "#",
+  instagram: "https://www.instagram.com/f_y_k_l_i?igsh=djB5bzh4a3c3ZGZ2",
   twitter: "#",
   facebook: "#",
   linkedin: "#"
