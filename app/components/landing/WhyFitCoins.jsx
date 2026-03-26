@@ -105,7 +105,7 @@ const WhyFitCoins = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Endless Possibilities.</span>
               </h2>
               <p className="text-gray-600 mb-12 text-lg">
-                Fit Choice World replaces expensive, locked-in memberships with a flexible coin-based system.
+                Fykli replaces expensive, locked-in memberships with a flexible coin-based system.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-8">

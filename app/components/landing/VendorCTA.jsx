@@ -93,12 +93,11 @@ const VendorCTA = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 mb-6">
               <Building size={16} className="text-brand-primary" />
-              <span className="text-sm font-bold text-brand-primary">For Fitness Centers</span>
+              <span className="text-sm font-bold text-brand-primary">For Centers</span>
             </div>
             
             <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter mb-6 leading-[1.1]">
-              List Your <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Fitness Center</span>
+              List Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Center</span>
             </h2>
             
             <p className="text-gray-600 text-lg mb-10 max-w-lg leading-relaxed">
@@ -138,7 +137,7 @@ const VendorCTA = () => {
               <h3 className="text-3xl font-black text-black mb-8">Register Your Center</h3>
               
               {/* Fake Avatars / Trusted Badges */}
-              <div className="flex flex-col items-center mb-10">
+              {/* <div className="flex flex-col items-center mb-10">
                 <div className="flex -space-x-3 mb-4">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center shadow-sm">
@@ -150,7 +149,7 @@ const VendorCTA = () => {
                   </div>
                 </div>
                 <p className="text-sm font-medium text-gray-500">Trusted by top fitness brands</p>
-              </div>
+              </div> */}
 
               <a 
                 href="https://center.fitchoiceworld.com/"

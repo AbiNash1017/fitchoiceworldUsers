@@ -8,9 +8,17 @@ import {
   ChevronRight
 } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { LOGO_URL } from '@/app/constants';
 const Navbar = ({ onOpenDownloadModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '/#features' },
+    { name: 'Contact Us', href: '/contact' }
+  ];
 
   return (
     <>
@@ -37,19 +45,22 @@ const Navbar = ({ onOpenDownloadModal }) => {
   
           {/* Desktop Links - Pill style */}
           <div className="hidden md:flex items-center bg-gray-100/80 border border-gray-200/50 rounded-full p-1">
-            {[
-              { name: 'Home', href: '/' },
-              { name: 'Features ', href: '#features' },
-              { name: 'Contact Us', href: '/contact' }
-            ].map((item, i) => (
-              <Link 
-                key={item.name} 
-                href={item.href}
-                className={`px-5 py-1.5 rounded-full text-sm font-semibold transition-all ${i === 0 ? 'bg-white text-black shadow-sm border border-gray-200/50' : 'text-gray-500 hover:text-black hover:bg-white/50'}`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link 
+                  key={item.name} 
+                  href={item.href}
+                  className={`px-5 py-1.5 rounded-full text-sm font-semibold transition-all ${
+                    isActive 
+                      ? 'bg-white text-black shadow-sm border border-gray-200/50' 
+                      : 'text-gray-500 hover:text-black hover:bg-white/50'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
   
           {/* CTA */}
@@ -80,20 +91,21 @@ const Navbar = ({ onOpenDownloadModal }) => {
               exit={{ opacity: 0, scale: 0.95, y: -10 }}
               className="absolute top-20 left-0 w-full bg-white rounded-3xl shadow-xl border border-gray-100 p-8 flex flex-col items-center gap-6 z-40"
             >
-              {[
-                { name: 'Home', href: '/' },
-                { name: 'Features', href: '#features' },
-                { name: 'Contact Us', href: '/contact' }
-              ].map((item) => (
-                <Link 
-                  key={item.name} 
-                  href={item.href}
-                  className="text-2xl font-bold text-black hover:text-brand-primary cursor-pointer transition-colors text-center"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link 
+                    key={item.name} 
+                    href={item.href}
+                    className={`text-2xl font-bold cursor-pointer transition-colors text-center ${
+                      isActive ? 'text-brand-primary' : 'text-black hover:text-brand-primary'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
               <div className="h-px w-full bg-gray-100 my-2"></div>
               <button 
                 onClick={() => {
