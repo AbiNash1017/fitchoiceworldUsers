@@ -41,7 +41,7 @@ const Marquee = () => {
         <motion.div 
           className="flex gap-8 items-center"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+          transition={{ ease: "linear", duration: 120, repeat: Infinity }}
         >
           {[...FITNESS_FACILITIES, ...FITNESS_FACILITIES].map((item, i) => (
             <div key={i} className="flex items-center gap-4 group cursor-default">
@@ -59,7 +59,7 @@ const Marquee = () => {
         <motion.div 
           className="flex gap-8 items-center"
           animate={{ x: ["-50%", "0%"] }}
-          transition={{ ease: "linear", duration: 40, repeat: Infinity }}
+          transition={{ ease: "linear", duration: 130, repeat: Infinity }}
         >
           {[...SPORTS_FACILITIES, ...SPORTS_FACILITIES].map((item, i) => (
             <div key={i} className="flex items-center gap-4 group cursor-default">
